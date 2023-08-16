@@ -17,7 +17,7 @@ mongoose.connect(MONGODB);
 mongoose.set('strictQuery', false);
 
 const app = express();
-app.use(cors({origin }));
+app.use(cors({ origin }));
 app.use(express.json());
 app.use(requestLogger);
 app.use(helmet());
@@ -35,6 +35,7 @@ app.get('/crash-test', () => {
 app.use(auth);
 app.use('/users', require('./routes/users'));
 app.use('/cards', require('./routes/cards'));
+
 app.use('*', () => { throw new NotFoundError(); });
 
 app.use(errorLogger);
