@@ -1,0 +1,11 @@
+.popup__infotooltip-title {
+    font-weight: 900;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    line-height: 29px;
+    max-width: 358px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    font-family: 'Inter', serif;
+}

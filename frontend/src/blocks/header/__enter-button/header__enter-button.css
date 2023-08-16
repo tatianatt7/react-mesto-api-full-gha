@@ -1,0 +1,17 @@
+.header__enter-button {
+    color: #ffffff;
+    background-color: black;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    width: max-content;
+    height: 22px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.header__enter-button:hover {
+    opacity: 0.5;
+}

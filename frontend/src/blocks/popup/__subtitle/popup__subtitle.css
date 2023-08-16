@@ -1,0 +1,11 @@
+.popup__subtitle {
+    text-align: center;
+}
+
+.popup__subtitle > span {
+    margin-right: 4px;
+}
+
+.popup__subtitle > a {
+    color: #fff;
+}
