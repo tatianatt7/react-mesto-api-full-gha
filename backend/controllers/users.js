@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 //
-const { JWT_TOKEN_KEY } = require('../utils/constants');
+const { JWT_TOKEN_KEY } = require('../config');
 const User = require('../models/user');
 const {
   NotFoundError,
@@ -49,8 +49,7 @@ const createUser = (req, res, next) => {
       }
 
       return next(err);
-    })
-    .catch(next);
+    });
 };
 
 const updateProfile = (req, res, next) => {

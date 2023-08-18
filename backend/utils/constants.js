@@ -23,10 +23,7 @@ const MESSAGE_ERROR_NOT_FOUND_CARD = 'Карточка с указанным ID 
 
 const URL_REGEXP = /^(https?:\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:;/~+#-]*[\w@?^=%&/~+#-])?$/;
 
-const JWT_TOKEN_KEY = 'jwt-secret-key';
-
 module.exports = {
-  JWT_TOKEN_KEY,
   URL_REGEXP,
   HTTP_STATUS_BAD_REQUEST,
   HTTP_STATUS_CONFLICT,

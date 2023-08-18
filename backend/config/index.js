@@ -10,13 +10,13 @@ if (process.env.NODE_ENV !== 'production') {
 
 const {
   PORT = 3000,
-  JWT_SECRET = 'jwt-secret-key',
+  JWT_TOKEN_KEY = 'jwt-secret-key',
   MONGODB = 'mongodb://127.0.0.1:27017/mestodb',
 } = process.env;
 
 module.exports = {
   origin,
   PORT,
-  JWT_SECRET,
+  JWT_TOKEN_KEY,
   MONGODB,
 };

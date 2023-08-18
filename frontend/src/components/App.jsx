@@ -158,9 +158,11 @@ function App() {
   }
 
   const onRegistrationSubmit = (email, password) => {
-    authApi.registerUser(email, password)
-      .then(res => {
+    authApi
+      .registerUser({ email, password })
+      .then(() => {
         setIsSuccessPopupOpened(true);
+        navigate('/sign-in', { replace: true });
       })
       .catch(err => {
         setIsFailPopupOpened(true);
