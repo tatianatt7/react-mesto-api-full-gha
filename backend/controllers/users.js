@@ -1,12 +1,15 @@
+const { ValidationError } = require('mongoose').Error;
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 //
 const { JWT_TOKEN_KEY } = require('../config');
+const { MESSAGE_ERROR_CONFLICT } = require('../utils/constants');
 const User = require('../models/user');
 const {
   NotFoundError,
   ConflictError,
   UnauthorizedError,
+  BadRequestError,
 } = require('../utils/errors');
 
 const getUsers = (_, res, next) => {
@@ -44,8 +47,11 @@ const createUser = (req, res, next) => {
       email,
     }))
     .catch((err) => {
+      if (err instanceof ValidationError) {
+        return next(new BadRequestError(err.message));
+      }
       if (err.code === 11000) {
-        return next(new ConflictError());
+        return next(new ConflictError(MESSAGE_ERROR_CONFLICT));
       }
 
       return next(err);
